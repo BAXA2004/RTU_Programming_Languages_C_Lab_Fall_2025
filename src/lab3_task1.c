@@ -1,6 +1,6 @@
 /*
  * Lab 3, Task 1
- * Student Name, Student ID
+ * Student Bakhronjon Hamzaev, Student ID 241ADB017
  *
  * Implement array algorithms:
  *   - find minimum value
@@ -23,7 +23,6 @@
 
 #include <limits.h>
 #include <stdio.h>
-
 
 // Function prototypes
 int array_min(int arr[], int size);
@@ -74,7 +73,6 @@ int array_sum(int arr[], int size) {
   }
   return sum;  // placeholder
 }
-
 
 float array_avg(int arr[], int size) {
   // TODO: return average as float

@@ -13,26 +13,60 @@
 #include <string.h>
 
 // TODO: Define struct Student with fields name, id, grade
+struct Student {
+  char name[50];
+  int id;
+  float grade;
+};
 
 int main(void) {
-    int n;
-    struct Student *students = NULL;
+  int n;
+  struct Student *students = NULL;
 
-    printf("Enter number of students: ");
-    if (scanf("%d", &n) != 1 || n <= 0) {
-        printf("Invalid number.\n");
-        return 1;
-    }
+  printf("Enter number of students: ");
+  if (scanf("%d", &n) != 1 || n <= 0) {
+    printf("Invalid number.\n");
+    return 1;
+  }
 
-    // TODO: Allocate memory for n Student structs using malloc
+  // TODO: Allocate memory for n Student structs using malloc
+  students = (struct Student *)malloc(n * sizeof(struct Student));
+  if (students == NULL) {
+    printf("Memory allocation failed.\n");
+    return 1;
+  }
 
-    // TODO: Read student data in a loop
+  // TODO: Read student data in a loop
+  for (int i = 0; i < n; i++) {
+    printf("\nEnter info for student #%d:\n", i + 1);
 
-    // TODO: Display all student records in formatted output
+    printf("Name: ");
+    scanf(" %49[^\n]", students[i].name);  // Read string with spaces
 
-    // Optional: Compute average grade or find top student
+    printf("ID: ");
+    scanf("%d", &students[i].id);
 
-    // TODO: Free allocated memory
+    printf("Grade: ");
+    scanf("%f", &students[i].grade);
+  }
 
-    return 0;
+  // TODO: Display all student records in formatted output
+
+  // Optional: Compute average grade or find top student
+
+  // TODO: Free allocated memory
+
+  printf("\n--- Student Records ---\n");
+  for (int i = 0; i < n; i++) {
+    printf("Student #%d\n", i + 1);
+    printf("Name: %s\n", students[i].name);
+    printf("ID: %d\n", students[i].id);
+    printf("Grade: %.2f\n", students[i].grade);
+    printf("----------------------\n");
+  }
+
+  // Free allocated memory
+  free(students);
+
+  return 0;
 }

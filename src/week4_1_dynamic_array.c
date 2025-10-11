@@ -14,12 +14,11 @@
 int main(void) {
   int n;
   int *arr = NULL;
-  int sum = 0;
-  float average = 0.0;
+  
 
   printf("Enter number of elements: ");
   if (scanf("%d", &n) != 1 || n <= 0) {
-    printf("Invalid size.\n");
+    printf("no no no mister fish, you can enter number only!\n");
     return 1;
   }
 
@@ -29,7 +28,7 @@ int main(void) {
 
   // TODO: Check allocation success
   if (arr == NULL) {
-    printf("Memory allocation failed!\n");
+    printf("Memory allocation failed mister fish!\n");
     return 1;
   }
 
@@ -38,7 +37,7 @@ int main(void) {
   for (int i = 0; i < n; i++) {
     printf("Element %d: ", i + 1);
     if (scanf("%d", &arr[i]) != 1) {
-      printf("Invalid input.\n");
+      printf("Invalid input mister fish!.\n");
       free(arr);
       return 1;
     }
@@ -62,6 +61,6 @@ int main(void) {
   free(arr);
   arr = NULL;
 
-  printf("Memory successfully freed.\n");
+  printf("memory freed mister fish\n");
   return 0;
 }
